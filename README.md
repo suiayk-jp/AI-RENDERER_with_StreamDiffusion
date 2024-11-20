@@ -4,6 +4,7 @@
 このプロジェクトは、StreamDiffusion を使用した AI レンダラーを構築する開発環境を提供します。また、ComfyUI を統合し、AI ノードを通じて生成されたレンダリング結果を操作可能にします。
 
 ## プロジェクト構成
+```bash
 AI-RENDERER_with_StreamDiffusion/
 ├── docker/                          # Dockerファイルと実行環境の設定
 │   ├── ai-renderer-dev/             # 開発用Dockerfileとエントリポイントスクリプト
@@ -13,6 +14,7 @@ AI-RENDERER_with_StreamDiffusion/
 │   ├── nodes.py                     # カスタムノード定義
 │   └── StreamDiffusion/             # StreamDiffusion関連ファイル
 └── docker-compose.yml               # 環境全体を管理する設定ファイル
+```
 
 ## 必要要件
 以下のツールがインストールされていることを確認してください：
