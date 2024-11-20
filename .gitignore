@@ -1,0 +1,40 @@
+# 一時ファイルやログ
+*.log
+*.tmp
+*.swp
+*.bak
+*.DS_Store
+
+# Python関連のキャッシュ
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Docker関連
+**/docker-compose.override.yml
+**/Dockerfile
+docker/.docker/
+
+# ComfyUIのインストール先（リポジトリ内で自動的にクローンされるもの）
+ComfyUI/
+
+# コンパイルされたバイナリやビルド関連
+*.egg-info/
+dist/
+build/
+
+# パスワードや設定ファイル
+*.env
+*.config
+
+# システムファイル
+Thumbs.db
+ehthumbs.db
+
+# 作業中の一時的なファイル
+*.bak
+*.swp
+
+# StreamDiffusionディレクトリ（クローンされたものを除く）
+ComfyUI-ai-renderer_with_streamdiffusion/StreamDiffusion/

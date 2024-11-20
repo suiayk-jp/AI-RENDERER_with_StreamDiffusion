@@ -14,3 +14,4 @@ RUN pip3 install torch==2.1.0 torchvision==0.16.0 xformers huggingface_hub==0.24
     --index-url https://download.pytorch.org/whl/cu118
 
 WORKDIR /home/ubuntu/ai-renderer
+

@@ -1,0 +1,33 @@
+version: "3.9"
+
+services:
+  ai-renderer-dev:
+    container_name: ai-renderer-dev
+    build:
+      context: ./docker/ai-renderer-dev
+      dockerfile: Dockerfile
+    runtime: nvidia
+    environment:
+      - DEBIAN_FRONTEND=noninteractive
+      - PIP_PREFER_BINARY=1
+      - CUDA_HOME=/usr/local/cuda-11.8
+      - TORCH_CUDA_ARCH_LIST=8.6
+    volumes:
+      # プロジェクトディレクトリをマウント
+      - ./AI-RENDERER_with_StreamDiffusion:/home/ubuntu/ai-renderer
+      # ComfyUIディレクトリを動的にマウント
+      - ${COMFYUI_DIR}:/home/ubuntu/ai-renderer/ComfyUI
+    working_dir: /home/ubuntu/ai-renderer
+    stdin_open: true
+    tty: true
+    entrypoint: ["/home/ubuntu/ai-renderer/docker/ai-renderer-dev/entrypoint.sh"]
+    command: bash
+
+# サーバ・クライアント用のひな形サービス（空にしておく）
+  server-runtime:
+    container_name: server-runtime
+    image: ubuntu:22.04
+
+  client-runtime:
+    container_name: client-runtime
+    image: ubuntu:22.04
