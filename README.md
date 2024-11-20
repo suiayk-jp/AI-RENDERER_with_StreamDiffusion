@@ -23,13 +23,8 @@ AI-RENDERER_with_StreamDiffusion/
 - NVIDIAドライバ (CUDA 11.8 対応)
 
 ## 初期設定
-### 1. ComfyUIのローカルディレクトリを設定
-ローカル環境に既存のComfyUIがある場合、環境変数COMFYUI_DIRを設定します。
-```bash
-export COMFYUI_DIR=/path/to/your/local/ComfyUI
-```
 
-### 2. ComfyUIがインストールされていない場合
+### 1. ComfyUIのインストール（ComfyUIをインストールしていない場合のみ）
 ComfyUIがローカルにインストールされていない場合、以下の手順でインストールします。
 ```bash
 cd ~
@@ -37,7 +32,12 @@ git clone https://github.com/comfyanonymous/ComfyUI.git
 cd ComfyUI
 pip install -r requirements.txt
 ```
-次に、ComfyUIの実行用スクリプトを作成します。
+### 2. ComfyUIのローカルディレクトリを設定
+ローカル環境に既存のComfyUIがある場合、環境変数COMFYUI_DIRを設定します。
+```bash
+export COMFYUI_DIR= "ComfyUIのあるディレクトリのパス"
+```
+### 3. ComfyUIの実行用スクリプトを作成
 ```bash
 echo -e "#!/bin/bash\npython ./main.py" > run_comfyui.sh
 chmod +x run_comfyui.sh
